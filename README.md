@@ -6,6 +6,10 @@
 - writing first terreform file (providers, ressource group)
 - terraform `plan`, `apply` and `destroy` commands
 - creating dedicated variables
+- creating module tree
+- using functions to apply to string values such as `lower`
+- work with additional provider `random`
+- create `outputs` to feed in dynamic values into other resources
 
 
 ### References

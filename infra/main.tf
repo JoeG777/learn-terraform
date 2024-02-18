@@ -12,9 +12,19 @@ provider "azurerm" {
     features {}
 }
 
+locals {
+
+  tags = {
+  environment = "lab"
+  owner = "Boss"
+  
+  }
+}
+
 resource "azurerm_resource_group" "resource_group" {
   name = var.rsgname
   location = var.location
+  tags = local.tags
 }
 
 resource "azurerm_storage_account" "sa" {
@@ -23,4 +33,6 @@ resource "azurerm_storage_account" "sa" {
   location                 = azurerm_resource_group.resource_group.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
+
+  tags = local.tags
 }
